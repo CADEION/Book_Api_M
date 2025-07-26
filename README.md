@@ -6,8 +6,9 @@ This is a RESTful Books API that supports **pagination**, **sorting**, and **sea
 
 ## 🚀 Base URL
 
+```
 http://localhost:5000/api/books
-
+```
 
 ---
 
@@ -15,12 +16,13 @@ http://localhost:5000/api/books
 
 ### 1. 📄 Pagination
 - `page`: Page number to retrieve.
-- `pageSize`: Number of books per page.
-- **Default:** `page=1`, `pageSize=5`
+- `page_size`: Number of books per page.
+- **Default:** `page=1`, `page_size=5`
 
 **Example:**
-GET /api/books?page=2&pageSize=4
-
+```
+GET /api/books?page=2&page_size=4
+```
 
 ---
 
@@ -29,10 +31,10 @@ GET /api/books?page=2&pageSize=4
 - `sort_order`: `asc` or `desc`
 
 **Examples:**
-
+```
 GET /api/books?sort_by=title&sort_order=asc
 GET /api/books?sort_by=publicationYear&sort_order=desc
-
+```
 
 ---
 
@@ -40,10 +42,11 @@ GET /api/books?sort_by=publicationYear&sort_order=desc
 - `search`: Filter by title, author, or genre (supports partial match)
 
 **Examples:**
+```
 GET /api/books?search=George Orwell
 GET /api/books?search=Memoir
 GET /api/books?search=Farm
-
+```
 
 ---
 
@@ -51,8 +54,8 @@ GET /api/books?search=Farm
 
 | #  | Test Case                               | Description                                       |
 |----|------------------------------------------|---------------------------------------------------|
-| 1  | Get Default Books (Page 1)               | Fetches first 10 books                            |
-| 2  | Get Books - Page 2                       | Fetches books 11–20                               |
+| 1  | Get Default Books (Page 1)               | Fetches first 5 books                             |
+| 2  | Get Books - Page 2                       | Fetches books 6–10                                |
 | 3  | Get Books - Page Size 5                  | Returns only 5 books per page                     |
 | 4  | Sort Books by Title (A–Z)                | Alphabetical sorting                              |
 | 5  | Sort Books by Title (Z–A)                | Reverse alphabetical sorting                      |
@@ -71,7 +74,7 @@ GET /api/books?search=Farm
 {
   "total": 40,
   "page": 1,
-  "pageSize": 10,
+  "pageSize": 5,
   "books": [
     {
       "_id": "123abc",
@@ -79,36 +82,58 @@ GET /api/books?search=Farm
       "author": "George Orwell",
       "publicationYear": 1949,
       "genre": "Dystopian"
-    },
-    ...
+    }
+    // ...more books
   ]
 }
+```
+
+---
 
 ## 📦 How to Use
 
 **1. Clone the repository**
-
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/CADEION/Book_Api_M.git
+cd Book_Api_M
+```
 
+**2. Install dependencies**
 
-# 📥 Install dependencies
+_Backend:_
 ```bash
+cd backend
 npm install
-# or
-yarn install
+```
 
+_Frontend:_
+```bash
+cd ../frontend
+npm install
+```
 
-# 📥 Run the server
+**3. Run the servers**
 
+_Backend:_
+```bash
+npm start
+```
+
+_Frontend:_
 ```bash
 npm run dev
+```
 
+**4. Access the API**
 
-# 🌐 Access the API
 Open your browser or API tool at:
-
 ```
 http://localhost:5000/api/books
+```
+
+---
+
+## 📄 License
+
+MIT
 

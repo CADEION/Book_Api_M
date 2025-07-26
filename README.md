@@ -65,6 +65,7 @@ GET /api/books?search=Farm
 | 9  | Search by Genre “Memoir”                 | Filters books by genre                            |
 | 10 | Search by Partial Title “Farm”           | Searches books with title containing 'Farm'       |
 | 11 | Combined Filters                         | Applies page, size, sort, and search together     |
+| 12 | Invalid Page Number (-1)                 | Returns error for invalid page: `/api/books?page=-1` |
 
 ---
 
